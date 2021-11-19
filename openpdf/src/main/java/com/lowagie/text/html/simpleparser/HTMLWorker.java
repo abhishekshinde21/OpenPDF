@@ -151,7 +151,31 @@ public class HTMLWorker implements SimpleXMLDocHandler, DocListener {
         worker.setInterfaceProps(interfaceProps);
         worker.objectList = new ArrayList<>();
         worker.parse(reader);
+        for (int i = 0; i < worker.objectList.size(); i++) {
+            if (worker.objectList.get(i) instanceof com.lowagie.text.List) {
+                worker.objectList.set(i, reconfigureListWithIndentation((com.lowagie.text.List) worker.objectList.get(i), 5));
+            }
+        }
         return worker.objectList;
+    }
+
+    /**
+     * Applies indentation to the HTML-parsed list
+     * @param list HTML-parsed list
+     * @param symbolIndent value of the symbol indentation
+     * @return reconfigured list with updates
+     */
+    public static com.lowagie.text.List reconfigureListWithIndentation(com.lowagie.text.List list, int symbolIndent) {
+        com.lowagie.text.List reconfiguredList = new com.lowagie.text.List(symbolIndent);
+        for (Element e: list.getItems()) {
+            if (!(e instanceof com.lowagie.text.List)) {
+                reconfiguredList.add(e);
+            } else {
+                com.lowagie.text.List tempList = reconfigureListWithIndentation((com.lowagie.text.List) e, symbolIndent);
+                reconfiguredList.add(tempList);
+            }
+        }
+        return reconfiguredList;
     }
 
     public StyleSheet getStyleSheet() {
