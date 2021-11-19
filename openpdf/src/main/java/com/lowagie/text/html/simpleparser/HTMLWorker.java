@@ -161,6 +161,7 @@ public class HTMLWorker implements SimpleXMLDocHandler, DocListener {
 
     /**
      * Applies indentation to the HTML-parsed list
+     * Derived solution from the one described here: https://github.com/LibrePDF/OpenPDF/issues/615
      * @param list HTML-parsed list
      * @param symbolIndent value of the symbol indentation
      * @return reconfigured list with updates

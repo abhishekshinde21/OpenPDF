@@ -14,6 +14,7 @@ import java.util.Map;
 public class NestedHTMLTest {
     public static void main(String[] args) {
         try {
+            // Derived this test case from https://github.com/LibrePDF/OpenPDF/issues/615
             Document doc = new Document(PageSize.A4, 50, 50, 100, 50);
 
             PdfWriter.getInstance(doc, new FileOutputStream("nested.pdf"));
