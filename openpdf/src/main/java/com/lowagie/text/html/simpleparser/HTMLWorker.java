@@ -141,6 +141,14 @@ public class HTMLWorker implements SimpleXMLDocHandler, DocListener {
         return parseToList(reader, style, (Map<String, Object>) interfaceProps);
     }
 
+    /**
+     * This method parses an HTML string into a list of elements
+     * @param reader a container for the HTML string to be parsed
+     * @param style the stylesheet that should be followed
+     * @param interfaceProps the properties of the interface
+     * @return a list of parsed elements
+     * @throws IOException raises an exception if unable to parse HTML string
+     */
     public static ArrayList<Element> parseToList(Reader reader, @Nullable StyleSheet style, Map<String, Object> interfaceProps)
             throws IOException {
         HTMLWorker worker = new HTMLWorker(null);
@@ -160,7 +168,7 @@ public class HTMLWorker implements SimpleXMLDocHandler, DocListener {
     }
 
     /**
-     * Applies indentation to the HTML-parsed list
+     * A utility method that applies indentation to the HTML-parsed list
      * Derived solution from the one described here: https://github.com/LibrePDF/OpenPDF/issues/615
      * @param list HTML-parsed list
      * @param symbolIndent value of the symbol indentation
