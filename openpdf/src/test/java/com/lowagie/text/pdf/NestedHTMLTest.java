@@ -86,16 +86,5 @@ public class NestedHTMLTest {
             System.out.println(ex);
         }
     }
-
-    // Initial testing of recursively applying indentation
-    public static Element applyIndent(Element e, int symbolIndent) {
-        if (e instanceof List) {
-            ((List) e).setSymbolIndent(symbolIndent);
-
-            for (int i = 0; i < ((List) e).size(); i++) {
-                ((List) e).getItems().set(i, applyIndent(((List) e).getItems().get(i), symbolIndent));
-            }
-        }
-        return e;
-    }
+    
 }
