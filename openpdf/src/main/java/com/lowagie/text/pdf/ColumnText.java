@@ -1085,8 +1085,8 @@ public class ColumnText {
             alignment = Element.ALIGN_LEFT;
         canvas.saveState();
         ColumnText ct = new ColumnText(canvas);
-        float lly = -1;
-        float ury = 2;
+        float lly = -5;
+        float ury = 5;
         float llx;
         float urx;
         switch (alignment) {
