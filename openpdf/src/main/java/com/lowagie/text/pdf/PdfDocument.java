@@ -1362,6 +1362,9 @@ public class PdfDocument extends Document {
             text.moveText(moveTextX, -l.height());
             // is the line preceded by a symbol?
             if (l.listSymbol() != null) {
+                // The following Y configurations enables the symbol to be shown
+                ColumnText.setLowerLeftY(-5);
+                ColumnText.setUpperRightY(5);
                 ColumnText.showTextAligned(graphics, Element.ALIGN_LEFT, new Phrase(l.listSymbol()), text.getXTLM() - l.listIndent(), text.getYTLM(), 0);
             }
 
