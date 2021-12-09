@@ -143,12 +143,12 @@ public class ColumnText {
     /**
      * Lower left y-position for text alignment
      */
-    public static float LOWER_LEFT_Y = 1;
+    public static float LOWER_LEFT_Y = -1;
 
     /**
      * Upper right y-position for text alignment
      */
-    public static float UPPER_RIGHT_Y = -2;
+    public static float UPPER_RIGHT_Y = 2;
 
     protected int runDirection = PdfWriter.RUN_DIRECTION_DEFAULT;
     
