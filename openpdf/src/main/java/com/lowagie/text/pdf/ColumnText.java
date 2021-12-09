@@ -139,7 +139,11 @@ public class ColumnText {
      * Digit type option: Use Eastern (Extended) Arabic-Indic digits (U+06f0...U+06f9).
      */
     public static final int DIGIT_TYPE_AN_EXTENDED = ArabicLigaturizer.DIGIT_TYPE_AN_EXTENDED;
-    
+
+    public static float LOWER_LEFT_Y = 1;
+
+    public static float UPPER_RIGHT_Y = -2;
+
     protected int runDirection = PdfWriter.RUN_DIRECTION_DEFAULT;
     
     /** the space char ratio */
@@ -1035,6 +1039,22 @@ public class ColumnText {
     public float getDescender() {
         return descender;
     }
+
+    public static float getLowerLeftY() {
+        return LOWER_LEFT_Y;
+    }
+
+    public static void setLowerLeftY(float lly) {
+        LOWER_LEFT_Y = lly;
+    }
+
+    public static float getUpperRightY() {
+        return UPPER_RIGHT_Y;
+    }
+
+    public static void setUpperRightY(float ury) {
+        UPPER_RIGHT_Y = ury;
+    }
     
     /**
      * Gets the width that the line will occupy after writing.
@@ -1085,8 +1105,8 @@ public class ColumnText {
             alignment = Element.ALIGN_LEFT;
         canvas.saveState();
         ColumnText ct = new ColumnText(canvas);
-        float lly = -5;
-        float ury = 5;
+        float lly = getLowerLeftY();
+        float ury = getUpperRightY();
         float llx;
         float urx;
         switch (alignment) {
