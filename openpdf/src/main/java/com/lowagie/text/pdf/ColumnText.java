@@ -139,7 +139,17 @@ public class ColumnText {
      * Digit type option: Use Eastern (Extended) Arabic-Indic digits (U+06f0...U+06f9).
      */
     public static final int DIGIT_TYPE_AN_EXTENDED = ArabicLigaturizer.DIGIT_TYPE_AN_EXTENDED;
-    
+
+    /**
+     * Lower left y-position for text alignment
+     */
+    protected static float lowerLeftY = -1;
+
+    /**
+     * Upper right y-position for text alignment
+     */
+    protected static float upperRightY = 2;
+
     protected int runDirection = PdfWriter.RUN_DIRECTION_DEFAULT;
     
     /** the space char ratio */
@@ -1035,6 +1045,46 @@ public class ColumnText {
     public float getDescender() {
         return descender;
     }
+
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
+    /**
+     * Gets the lower left y-position of text alignment
+     *
+     * @return the value of the y-position (float)
+     */
+    public static float getLowerLeftY() {
+        return lowerLeftY;
+    }
+
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
+    /**
+     * Sets the lower left y-position of text alignment
+     *
+     * @param lly positional value
+     */
+    public static void setLowerLeftY(float lly) {
+        lowerLeftY = lly;
+    }
+
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
+    /**
+     * Gets the upper right y-position of text alignment
+     *
+     * @return the value of the y-position (float)
+     */
+    public static float getUpperRightY() {
+        return upperRightY;
+    }
+
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
+    /**
+     * Sets the upper right y-position of text alignment
+     * 
+     * @param ury positional value
+     */
+    public static void setUpperRightY(float ury) {
+        upperRightY = ury;
+    }
     
     /**
      * Gets the width that the line will occupy after writing.
@@ -1085,8 +1135,8 @@ public class ColumnText {
             alignment = Element.ALIGN_LEFT;
         canvas.saveState();
         ColumnText ct = new ColumnText(canvas);
-        float lly = -1;
-        float ury = 2;
+        float lly = getLowerLeftY();
+        float ury = getUpperRightY();
         float llx;
         float urx;
         switch (alignment) {
