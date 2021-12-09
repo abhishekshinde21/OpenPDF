@@ -140,8 +140,14 @@ public class ColumnText {
      */
     public static final int DIGIT_TYPE_AN_EXTENDED = ArabicLigaturizer.DIGIT_TYPE_AN_EXTENDED;
 
+    /**
+     * Lower left y-position for text alignment
+     */
     public static float LOWER_LEFT_Y = 1;
 
+    /**
+     * Upper right y-position for text alignment
+     */
     public static float UPPER_RIGHT_Y = -2;
 
     protected int runDirection = PdfWriter.RUN_DIRECTION_DEFAULT;
@@ -1040,18 +1046,36 @@ public class ColumnText {
         return descender;
     }
 
+    /**
+     * Gets the lower left y-position of text alignment
+     *
+     * @return the value of the y-position (float)
+     */
     public static float getLowerLeftY() {
         return LOWER_LEFT_Y;
     }
 
+    /**
+     * Sets the lower left y-position of text alignment
+     * @param lly positional value
+     */
     public static void setLowerLeftY(float lly) {
         LOWER_LEFT_Y = lly;
     }
 
+    /**
+     * Gets the upper right y-position of text alignment
+     *
+     * @return the value of the y-position (float)
+     */
     public static float getUpperRightY() {
         return UPPER_RIGHT_Y;
     }
 
+    /**
+     * Sets the upper right y-position of text alignment
+     * @param ury positional value
+     */
     public static void setUpperRightY(float ury) {
         UPPER_RIGHT_Y = ury;
     }
