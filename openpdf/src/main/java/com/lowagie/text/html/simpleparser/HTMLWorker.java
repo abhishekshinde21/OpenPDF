@@ -141,6 +141,7 @@ public class HTMLWorker implements SimpleXMLDocHandler, DocListener {
         return parseToList(reader, style, (Map<String, Object>) interfaceProps);
     }
 
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     /**
      * This method parses an HTML string into a list of elements
      * @param reader a container for the HTML string to be parsed
@@ -167,6 +168,7 @@ public class HTMLWorker implements SimpleXMLDocHandler, DocListener {
         return worker.objectList;
     }
 
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     /**
      * A utility method that applies indentation to the HTML-parsed list
      * Derived solution from the one described here: https://github.com/LibrePDF/OpenPDF/issues/615

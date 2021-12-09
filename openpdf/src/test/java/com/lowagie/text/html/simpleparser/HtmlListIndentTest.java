@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 public class HtmlListIndentTest {
 
     @Test
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     void testEmptyListAppliesIndentation() {
         // given
         int symbolIndent = 5;
@@ -22,6 +23,7 @@ public class HtmlListIndentTest {
     }
 
     @Test
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     void testEmptyIndentedListUpdatesIndentation() {
         // given
         int symbolIndent = 5;
@@ -35,6 +37,7 @@ public class HtmlListIndentTest {
     }
 
     @Test
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     void testSingleNestedListAppliesIndentation() {
         // given
         int symbolIndent = 5;
@@ -52,6 +55,7 @@ public class HtmlListIndentTest {
     }
 
     @Test
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     void testSingleNestedAndIndentedListUpdatesIndentation() {
         // given
         int symbolIndent = 5;
@@ -69,6 +73,7 @@ public class HtmlListIndentTest {
     }
 
     @Test
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     void testSingleNestedListWithElementsAndAppliesIndentation() {
         // given
         int symbolIndent = 5;
@@ -90,6 +95,7 @@ public class HtmlListIndentTest {
     }
 
     @Test
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/615
     void testMultiNestedListAppliesIndentation() {
         // given
         int symbolIndent = 5;
