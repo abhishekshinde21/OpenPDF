@@ -1046,6 +1046,7 @@ public class ColumnText {
         return descender;
     }
 
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
     /**
      * Gets the lower left y-position of text alignment
      *
@@ -1055,14 +1056,17 @@ public class ColumnText {
         return LOWER_LEFT_Y;
     }
 
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
     /**
      * Sets the lower left y-position of text alignment
+     *
      * @param lly positional value
      */
     public static void setLowerLeftY(float lly) {
         LOWER_LEFT_Y = lly;
     }
 
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
     /**
      * Gets the upper right y-position of text alignment
      *
@@ -1072,8 +1076,10 @@ public class ColumnText {
         return UPPER_RIGHT_Y;
     }
 
+    // CS427 Issue link: https://github.com/LibrePDF/OpenPDF/issues/175
     /**
      * Sets the upper right y-position of text alignment
+     * 
      * @param ury positional value
      */
     public static void setUpperRightY(float ury) {
