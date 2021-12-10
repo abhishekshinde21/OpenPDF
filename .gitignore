@@ -178,7 +178,6 @@ buildNumber.properties
 
 ### Custom
 *.rtf
-*.html
 
 *.pdf
 #Allow pdf as source resources for testing
